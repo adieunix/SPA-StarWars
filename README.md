@@ -1,3 +1,4 @@
+# SPA Star Wars
 Single Page Application with multiple page built with lovely AngularJS. You can explore all resources of Star Wars with full details.
 
 ## Components
