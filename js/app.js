@@ -64,23 +64,22 @@ app.controller('HomeCtrl', function($scope,$state,$http,Service,$stateParams) {
         6. Planets
     */
     
+    /* Loading spinner init  */
     $scope.loading = true;
     
     /* Button trigger for Prev/Next */
     $scope.pushPrev = function(url,id) {
-        console.log(id+' '+url);
         $state.go('home',{id:id,url:url});
     }
     $scope.pushNext = function(url,id) {
-        console.log(id+' '+url);
         $state.go('home',{id:id,url:url});
     }
     
+    /* Condition for People or Not */
     if($stateParams.id==null || $stateParams.id==1) { 
-        console.log($stateParams.id+$stateParams.url);
         $scope.title = 'People';
         $scope.id = 1;
-        /* Conditional for People */
+        
         if($stateParams.url==null) {
 
             /* Get People First Page */

@@ -19,6 +19,7 @@
 </head>
     
 <body ng-controller="swCtrl">
+    <!-- Fixed Navbar -->
     <nav class="navbar navbar-default navbar-fixed-top white-navbar">
         <div class="container top">
             <div class="row">
@@ -38,8 +39,9 @@
         </div>
     </nav>
     
+    <!-- Content -->
     <div class="container content">
-        <!-- Home Page -->
+        <!-- Home Page (Default for People list) -->
         <script type="text/ng-template" id="home.html">
             <div class="list-title animated fadeIn" ng-hide="loading">{{title}}</div>
             <ul class="list-unstyled list-resources">
