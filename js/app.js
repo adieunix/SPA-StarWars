@@ -72,6 +72,14 @@ app.controller('HomeCtrl', function($scope,$state,$http,Service) {
         } else {
             $scope.page = res.data.previous.substr(-1)+1;
         }
+        
+        /* Button trigger for Prev/Next */
+        $scope.pushPrev = function() {
+            
+        }
+        $scope.pushNext = function() {
+            
+        }
     });
 });
 

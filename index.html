@@ -59,7 +59,7 @@
             </ul>
             <div class="row animated fadeIn" ng-hide="loading">
                 <div class="col-xs-5 text-right">
-                    <div ng-class="{'prev':prev!=null,'prev-null':prev==null}">
+                    <div ng-class="{'prev':prev!=null,'prev-null':prev==null}" ng-click="pushPrev()">
                         <i class="ion-ios-arrow-left pagi-icon"></i>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                     <div class="page-num">Page {{page}}</div>
                 </div>
                 <div class="col-xs-5 text-left">
-                    <div ng-class="{'next':next!=null,'next-null':next==null}">
+                    <div ng-class="{'next':next!=null,'next-null':next==null}" ng-click="pushNext()">
                         <i class="ion-ios-arrow-right pagi-icon"></i>
                     </div>
                 </div>
