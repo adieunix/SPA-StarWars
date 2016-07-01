@@ -1,13 +1,16 @@
 var app = angular.module("swApp", ['ui.bootstrap','ui.router']);
 
-/* API Service */
+/* API SERVICE */
+/*=============*/
 app.factory('Service', function() {
     return {
         API: 'http://swapi.co/api/'
     }
 })
 
+
 /*  GLOBAL CONTROLLER */
+/*====================*/
 app.controller('swCtrl', function($scope,$state,$http,$rootScope) {    
     $scope.leftVisible = false;
     $scope.rightVisible = false;
@@ -30,7 +33,9 @@ app.controller('swCtrl', function($scope,$state,$http,$rootScope) {
     }
 });
 
+
 /* SET STATE PROVIDER */
+/*====================*/
 app.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
     .state('home', {
@@ -53,7 +58,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/home');
 });  
 
+
 /* HOME CONTROLLER */
+/*=================*/
 app.controller('HomeCtrl', function($scope,$state,$http,Service,$stateParams) {
     /* ID for resources
         1. People
@@ -76,7 +83,7 @@ app.controller('HomeCtrl', function($scope,$state,$http,Service,$stateParams) {
         $state.go('home',{id:id,url:url});
     }
     
-    /* Condition for People or Not */
+    /* Condition for PEOPLE or Not */
     if($stateParams.id==null || $stateParams.id==1) { 
         $scope.title = 'People';
         $scope.id = 1;
@@ -125,7 +132,7 @@ app.controller('HomeCtrl', function($scope,$state,$http,Service,$stateParams) {
             });
         }  
     } else {
-        /* Condition for Films */
+        /* Condition for FILMS */
         if($stateParams.id==2) {
             $scope.title = 'Films';
             $scope.id = 2;  
@@ -191,12 +198,16 @@ app.controller('HomeCtrl', function($scope,$state,$http,Service,$stateParams) {
     } 
 });
 
+
 /* DETAIL CONTROLLER */
+/*===================*/
 app.controller('DetailCtrl', function($scope,$state,$http) {
     
 });
 
-/* Slide Menu */
+
+/* SLIDE MENU EVENTS */
+/*===================*/
 app.run(function($rootScope) {
     document.addEventListener("keyup", function(e) {
         if (e.keyCode === 27)
@@ -208,7 +219,9 @@ app.run(function($rootScope) {
     });
 });
 
-/* Directive for Menu Wrapper */
+
+/* DIRECTIVE FOR MENU WRAPPER */
+/*============================*/
 app.directive("menu", function() {
     return {
         restrict: "E",
@@ -221,7 +234,9 @@ app.directive("menu", function() {
     };
 });
 
-/* Directive for List Menu */
+
+/* DIRECTIVE FOR LIST MENU */
+/*=========================*/
 app.directive("menuItem", function() {
      return {
          restrict: "E",
