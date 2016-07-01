@@ -28,7 +28,7 @@
                     </div> 
                 </div>
                 <div class="col-xs-6">
-                    <div class="title" ui-sref="home">
+                    <div class="title" ui-sref="home({id:1,url:null})">
                         <img src="img/logo.png" class="img-responsive center-block">
                     </div>
                 </div>
@@ -57,9 +57,11 @@
                     </div>
                 </li>
             </ul>
+            
+            <!-- Pagination -->
             <div class="row animated fadeIn" ng-hide="loading">
                 <div class="col-xs-5 text-right">
-                    <div ng-class="{'prev':prev!=null,'prev-null':prev==null}" ng-click="pushPrev()">
+                    <div ng-class="{'prev':prev!=null,'prev-null':prev==null}" ng-click="pushPrev(prev,id)">
                         <i class="ion-ios-arrow-left pagi-icon"></i>
                     </div>
                 </div>
@@ -67,11 +69,12 @@
                     <div class="page-num">Page {{page}}</div>
                 </div>
                 <div class="col-xs-5 text-left">
-                    <div ng-class="{'next':next!=null,'next-null':next==null}" ng-click="pushNext()">
+                    <div ng-class="{'next':next!=null,'next-null':next==null}" ng-click="pushNext(next,id)">
                         <i class="ion-ios-arrow-right pagi-icon"></i>
                     </div>
                 </div>
             </div>
+            
             <div class="loading" ng-show="loading"></div>
         </script>
 

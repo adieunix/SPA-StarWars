@@ -34,9 +34,14 @@ app.controller('swCtrl', function($scope,$state,$http,$rootScope) {
 app.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
     .state('home', {
+        cache: false,
         url: '/home',
         templateUrl: "home.html",
-        controller: 'HomeCtrl'
+        controller: 'HomeCtrl',
+        params: {
+            id: null,
+            url: null
+        }
     })
     
     .state('detail', {
@@ -49,38 +54,75 @@ app.config(function($stateProvider, $urlRouterProvider) {
 });  
 
 /* HOME CONTROLLER */
-app.controller('HomeCtrl', function($scope,$state,$http,Service) {
-    $scope.title = 'People';
+app.controller('HomeCtrl', function($scope,$state,$http,Service,$stateParams) {
+    /* ID for resources
+        1. People
+        2. Films
+        3. Starship
+        4. Vehicles
+        5. Species
+        6. Planets
+    */
+    
     $scope.loading = true;
     
-    /* Get People */
-    var getPeople = {
-        method: 'GET',
-        url: Service.API+'people'
+    /* Button trigger for Prev/Next */
+    $scope.pushPrev = function(url,id) {
+        console.log(id+' '+url);
+        $state.go('home',{id:id,url:url});
     }
-    $http(getPeople)
-    .then(function(res) {
-        console.log(res.data);
-        $scope.items = res.data.results;
-        $scope.loading = false;
-        
-        /* Pagination and Conditional */
-        $scope.prev = res.data.previous;
-        $scope.next = res.data.next;
-        if(res.data.previous==null) {
-            $scope.page = 1;
+    $scope.pushNext = function(url,id) {
+        console.log(id+' '+url);
+        $state.go('home',{id:id,url:url});
+    }
+    
+    if($stateParams.id==null || $stateParams.id==1) { 
+        console.log($stateParams.id+$stateParams.url);
+        $scope.title = 'People';
+        $scope.id = 1;
+        /* Conditional for People */
+        if($stateParams.url==null) {
+
+            /* Get People First Page */
+            var getPeople = {
+                method: 'GET',
+                url: Service.API+'people'
+            }
+            $http(getPeople)
+            .then(function(res) {
+                $scope.items = res.data.results;
+                $scope.loading = false;
+
+                /* Pagination and Conditional */
+                $scope.prev = res.data.previous;
+                $scope.next = res.data.next;
+                
+                if(res.data.previous==null) {
+                    $scope.page = 1;
+                } else {
+                    $scope.page = Number(res.data.previous.substr(-1))+1;
+                }
+            });
         } else {
-            $scope.page = res.data.previous.substr(-1)+1;
-        }
+            /* Get People Next Page */
+            var getNextPeople = {
+                method: 'GET',
+                url: $stateParams.url
+            }
+            $http(getNextPeople)
+            .then(function(res) {
+                $scope.items = res.data.results;
+                $scope.loading = false;
+                
+                /* Pagination and Conditional */
+                $scope.prev = res.data.previous;
+                $scope.next = res.data.next;
+                $scope.page = Number(res.data.previous.substr(-1))+1;
+            });
+        }  
+    } else {
         
-        /* Button trigger for Prev/Next */
-        $scope.pushPrev = function() {
-            
-        }
-        $scope.pushNext = function() {
-            
-        }
-    });
+    } 
 });
 
 /* DETAIL CONTROLLER */
