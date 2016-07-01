@@ -7,7 +7,7 @@
     
     <!-- Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">    
+    <link href="css/ionicons.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     
@@ -61,7 +61,7 @@
             </ul>
             
             <!-- Pagination -->
-            <div class="row animated fadeIn" ng-hide="loading">
+            <div class="row animated fadeIn" ng-hide="pagination">
                 <div class="col-xs-5 text-right">
                     <div ng-class="{'prev':prev!=null,'prev-null':prev==null}" ng-click="pushPrev(prev,id)">
                         <i class="ion-ios-arrow-left pagi-icon"></i>
@@ -92,22 +92,22 @@
     <!-- Slide Menu -->
     <menu visible="leftVisible" alignment="left">
         <div class="title-menu">Resources</div>
-        <menu-item hash="home({id:1})">
+        <menu-item ui-sref="home({id:1,url:null})">
             <i class="ion-android-person menu-icon"></i> People
         </menu-item>
-        <menu-item hash="home({id:2})">
+        <menu-item ui-sref="home({id:2,url:null})">
             <i class="ion-android-film menu-icon"></i> Films
         </menu-item>
-        <menu-item hash="home({id:3})">
+        <menu-item ui-sref="home({id:3,url:null})">
             <i class="ion-jet menu-icon"></i> Starships
         </menu-item>
-        <menu-item hash="home({id:4})">
+        <menu-item ui-sref="home({id:4,url:null})">
             <i class="ion-android-car menu-icon"></i> Vehicles
         </menu-item>
-        <menu-item hash="home({id:5})">
+        <menu-item ui-sref="home({id:5,url:null})">
             <i class="ion-ios-body menu-icon"></i> Species
         </menu-item>
-        <menu-item hash="home({id:6})">
+        <menu-item ui-sref="home({id:6,url:null})">
             <i class="ion-planet menu-icon"></i> Planets
         </menu-item>
     </menu>

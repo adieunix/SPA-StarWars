@@ -66,6 +66,7 @@ app.controller('HomeCtrl', function($scope,$state,$http,Service,$stateParams) {
     
     /* Loading spinner init  */
     $scope.loading = true;
+    $scope.pagination = true;
     
     /* Button trigger for Prev/Next */
     $scope.pushPrev = function(url,id) {
@@ -81,7 +82,6 @@ app.controller('HomeCtrl', function($scope,$state,$http,Service,$stateParams) {
         $scope.id = 1;
         
         if($stateParams.url==null) {
-
             /* Get People First Page */
             var getPeople = {
                 method: 'GET',
@@ -89,13 +89,16 @@ app.controller('HomeCtrl', function($scope,$state,$http,Service,$stateParams) {
             }
             $http(getPeople)
             .then(function(res) {
+                /* Parsing Data */
                 $scope.items = res.data.results;
                 $scope.loading = false;
+                $scope.pagination = false;
 
                 /* Pagination and Conditional */
                 $scope.prev = res.data.previous;
                 $scope.next = res.data.next;
                 
+                /* Get page number */
                 if(res.data.previous==null) {
                     $scope.page = 1;
                 } else {
@@ -110,8 +113,10 @@ app.controller('HomeCtrl', function($scope,$state,$http,Service,$stateParams) {
             }
             $http(getNextPeople)
             .then(function(res) {
+                /* Parsing Data */
                 $scope.items = res.data.results;
                 $scope.loading = false;
+                $scope.pagination = false;
                 
                 /* Pagination and Conditional */
                 $scope.prev = res.data.previous;
@@ -120,7 +125,69 @@ app.controller('HomeCtrl', function($scope,$state,$http,Service,$stateParams) {
             });
         }  
     } else {
-        
+        /* Condition for Films */
+        if($stateParams.id==2) {
+            $scope.title = 'Films';
+            $scope.id = 2;  
+            
+            if($stateParams.url==null) {                
+                /* Get Films First Page */
+                var getPeople = {
+                    method: 'GET',
+                    url: Service.API+'films'
+                }
+                $http(getPeople)
+                .then(function(res) {
+                    /* Parsing Data */
+                    $scope.items = [];
+                    angular.forEach(res.data.results, function(v,k) {
+                        $scope.items.push({
+                            name: res.data.results[k].title
+                        });
+                    });
+                    if(res.data.next==null && res.data.previous==null) {
+                        $scope.pagination = true;
+                    } else {
+                        $scope.pagination = false;
+                    }
+                    $scope.loading = false;
+
+                    /* Pagination and Conditional */
+                    $scope.prev = res.data.previous;
+                    $scope.next = res.data.next;
+                    
+                    /* Get page number */
+                    if(res.data.previous==null) {
+                        $scope.page = 1;
+                    } else {
+                        $scope.page = Number(res.data.previous.substr(-1))+1;
+                    }
+                });
+            } else {
+                /* Get Films Next Page */
+                var getNextPeople = {
+                    method: 'GET',
+                    url: $stateParams.url
+                }
+                $http(getNextPeople)
+                .then(function(res) {
+                    /* Parsing Data */
+                    $scope.items = [];
+                    angular.forEach(res.data.results, function(v,k) {
+                        $scope.items.push({
+                            name: res.data.results[k].title
+                        });
+                    });
+                    $scope.loading = false;
+                    $scope.pagination = false;
+
+                    /* Pagination and Conditional */
+                    $scope.prev = res.data.previous;
+                    $scope.next = res.data.next;
+                    $scope.page = Number(res.data.previous.substr(-1))+1;
+                });
+            }
+        }
     } 
 });
 
@@ -162,11 +229,6 @@ app.directive("menuItem", function() {
          transclude: true,
          scope: {
              hash: "@"
-         },
-         link: function($scope) {
-             $scope.navigate = function() {
-                 window.location.hash = $scope.hash;
-             }
          }
      }
 });

@@ -1,10 +1,10 @@
 @font-face {
     font-family: roboto-light;
-    src: url(../font/ROBOTO-LIGHT.TTF);
+    src: url(../fonts/ROBOTO-LIGHT.TTF);
 }
 @font-face {
     font-family: roboto-medium;
-    src: url(../font/ROBOTO-MEDIUM.TTF);
+    src: url(../fonts/ROBOTO-MEDIUM.TTF);
 }
 body {
     background: #f5f5f5;
