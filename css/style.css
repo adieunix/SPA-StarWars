@@ -27,7 +27,7 @@ menu {
     display: block;
 }
 menu > div {
-    position: absolute;
+    position: fixed;
     z-index: 2;
     top: 0;
     width: 250px;
@@ -88,13 +88,17 @@ menu > div > menu-item > div:hover {
 menu > div > menu-item > div > span {
     float: left;
     color: inherit;
+    margin-left: 20px;
 }
 .title-menu {
     color: #fff;
-    padding: 15px;
+    padding: 16px;
     border-bottom: 1px solid #656464;
     text-transform: uppercase;
     background: #444;
+}
+.menu-icon {
+    position: absolute;
 }
 .btn-menu {
     padding: 8px 11px;
@@ -110,6 +114,10 @@ menu > div > menu-item > div > span {
 .zero-padding {
     padding: 0;
 }
+.page-num {
+    color: #a0a0a0;
+    margin-top: 5px;
+}
 .title {
     text-align: center;
     text-transform: uppercase;
@@ -119,6 +127,13 @@ menu > div > menu-item > div > span {
     padding: 13px 0;
     cursor: pointer
 }
+.list-resources li:hover {
+    background: #f2f2f2;
+    transition: background 0.4s;
+    -webkit-transition: background 0.4s;
+    -moz-transition: background 0.4s;
+    -o-transition: background 0.4s;
+}
 .list-resources li {
     max-width: 100%;
     background: #ffffff;
@@ -126,6 +141,7 @@ menu > div > menu-item > div > span {
     margin-top: 8px;
     border-radius: 2px;
     padding: 5px 8px;
+    cursor: pointer;
 }
 .list-title {
     margin: 10px 0 -7px;
@@ -151,6 +167,72 @@ menu > div > menu-item > div > span {
     padding: 4px 18px;
     color: #d53e41;
 }
+.pagi-icon {
+    font-size: 20px;
+    margin: 0px 5px;
+}
+.next span,
+.prev span {
+    position: relative;
+    top: -3px;
+    font-size: 11px;
+}
+.next:hover,
+.prev:hover {
+    background-color: #d53e41;
+    color: #fff;
+    transition: background 0.4s;
+    -webkit-transition: background 0.4s;
+    -moz-transition: background 0.4s;
+    -o-transition: background 0.4s;
+}
+.prev-null {
+    opacity: 0.2;
+    border: 1px solid #d53e41;
+    border-radius: 17px;
+    -moz-border-radius: 17px;
+    -webkit-border-radius: 17px;
+    -o-border-radius: 17px;
+    padding-right: 6px;
+    color: #d53e41;
+    width: 30px;
+    float: right;
+}
+.prev {
+    border: 1px solid #d53e41;
+    border-radius: 17px;
+    -moz-border-radius: 17px;
+    -webkit-border-radius: 17px;
+    -o-border-radius: 17px;
+    padding-right: 6px;
+    color: #d53e41;
+    cursor: pointer;
+    width: 30px;
+    float: right;
+}
+.next-null {
+    border: 1px solid #d53e41;
+    border-radius: 17px;
+    -moz-border-radius: 17px;
+    -webkit-border-radius: 17px;
+    -o-border-radius: 17px;
+    padding-left: 6px;
+    color: #d53e41;
+    width: 30px;
+    opacity: 0.2;
+}
+.next {
+    border: 1px solid #d53e41;
+    border-radius: 17px;
+    -moz-border-radius: 17px;
+    -webkit-border-radius: 17px;
+    -o-border-radius: 17px;
+    padding-left: 6px;
+    color: #d53e41;
+    cursor: pointer;
+    width: 30px;
+}
+
 .loading {
     margin: 20px auto 0;
     border-bottom: 2px solid #fff;

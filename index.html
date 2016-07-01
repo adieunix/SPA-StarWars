@@ -41,9 +41,9 @@
     <div class="container content">
         <!-- Home Page -->
         <script type="text/ng-template" id="home.html">
-            <div class="list-title" ng-hide="loading">{{title}}</div>
+            <div class="list-title animated fadeIn" ng-hide="loading">{{title}}</div>
             <ul class="list-unstyled list-resources">
-                <li ng-repeat="item in items">
+                <li ng-repeat="item in items" class="animated fadeIn">
                     <div class="row">
                         <div class="col-xs-2 zero-right text-center col-people">
                             <i class="ion-android-person list-img"></i>
@@ -57,6 +57,21 @@
                     </div>
                 </li>
             </ul>
+            <div class="row animated fadeIn" ng-hide="loading">
+                <div class="col-xs-5 text-right">
+                    <div ng-class="{'prev':prev!=null,'prev-null':prev==null}">
+                        <i class="ion-ios-arrow-left pagi-icon"></i>
+                    </div>
+                </div>
+                <div class="col-xs-2 text-center">
+                    <div class="page-num">Page {{page}}</div>
+                </div>
+                <div class="col-xs-5 text-left">
+                    <div ng-class="{'next':next!=null,'next-null':next==null}">
+                        <i class="ion-ios-arrow-right pagi-icon"></i>
+                    </div>
+                </div>
+            </div>
             <div class="loading" ng-show="loading"></div>
         </script>
 
@@ -72,12 +87,24 @@
     <!-- Slide Menu -->
     <menu visible="leftVisible" alignment="left">
         <div class="title-menu">Resources</div>
-        <menu-item hash="home({id:1})">People</menu-item>
-        <menu-item hash="home({id:2})">Films</menu-item>
-        <menu-item hash="home({id:3})">Starships</menu-item>
-        <menu-item hash="home({id:4})">Vehicles</menu-item>
-        <menu-item hash="home({id:5})">Species</menu-item>
-        <menu-item hash="home({id:6})">Planets</menu-item>
+        <menu-item hash="home({id:1})">
+            <i class="ion-android-person menu-icon"></i> People
+        </menu-item>
+        <menu-item hash="home({id:2})">
+            <i class="ion-android-film menu-icon"></i> Films
+        </menu-item>
+        <menu-item hash="home({id:3})">
+            <i class="ion-jet menu-icon"></i> Starships
+        </menu-item>
+        <menu-item hash="home({id:4})">
+            <i class="ion-android-car menu-icon"></i> Vehicles
+        </menu-item>
+        <menu-item hash="home({id:5})">
+            <i class="ion-ios-body menu-icon"></i> Species
+        </menu-item>
+        <menu-item hash="home({id:6})">
+            <i class="ion-planet menu-icon"></i> Planets
+        </menu-item>
     </menu>
 </body>
 </html>
