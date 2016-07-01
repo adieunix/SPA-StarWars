@@ -57,13 +57,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 /* HOME CONTROLLER */
 app.controller('HomeCtrl', function($scope,$state,$http,Service) {
+    $scope.title = 'People';
+    $scope.loading = true;
     var getPeople = {
         method: 'GET',
         url: Service.API+'people'
     }
     $http(getPeople)
     .then(function(res) {
-        console.log(res.data.results);
+        $scope.items = res.data.results;
+        $scope.loading = false;
     });
 });
 
