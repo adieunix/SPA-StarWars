@@ -1,4 +1,4 @@
-var app = angular.module("swApp", ['ui.bootstrap','ui.router']);
+var app = angular.module("swApp", ['ui.router']);
 
 /* API SERVICE */
 /*=============*/
