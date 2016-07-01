@@ -87,6 +87,7 @@ app.controller('HomeCtrl', function($scope,$state,$http,Service,$stateParams) {
     /*-----------------------------*/
     if($stateParams.id==null || $stateParams.id==1) { 
         $scope.title = 'People';
+        $scope.listIcon = 'ion-android-person';
         $scope.id = 1;
         
         if($stateParams.url==null) {
@@ -143,6 +144,7 @@ app.controller('HomeCtrl', function($scope,$state,$http,Service,$stateParams) {
         /*---------------------*/
         if($stateParams.id==2) {
             $scope.title = 'Films';
+            $scope.listIcon = 'ion-android-film';
             $scope.id = 2;  
             
             if($stateParams.url==null) {                
@@ -210,6 +212,7 @@ app.controller('HomeCtrl', function($scope,$state,$http,Service,$stateParams) {
         /*---------------------*/
         if($stateParams.id==3) {
             $scope.title = 'Starships';
+            $scope.listIcon = 'ion-jet';
             $scope.id = 3;
             
             if($stateParams.url==null) {
@@ -267,6 +270,7 @@ app.controller('HomeCtrl', function($scope,$state,$http,Service,$stateParams) {
         /*---------------------*/
         if($stateParams.id==4) {
             $scope.title = 'Vehicles';
+            $scope.listIcon = 'ion-android-car';
             $scope.id = 4;
             
             if($stateParams.url==null) {
@@ -324,6 +328,7 @@ app.controller('HomeCtrl', function($scope,$state,$http,Service,$stateParams) {
         /*---------------------*/
         if($stateParams.id==5) {
             $scope.title = 'Species';
+            $scope.listIcon = 'ion-ios-body';
             $scope.id = 5;
             
             if($stateParams.url==null) {
@@ -381,6 +386,7 @@ app.controller('HomeCtrl', function($scope,$state,$http,Service,$stateParams) {
         /*---------------------*/
         if($stateParams.id==6) {
             $scope.title = 'Planets';
+            $scope.listIcon = 'ion-planet';
             $scope.id = 6;
             
             if($stateParams.url==null) {
