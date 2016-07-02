@@ -106,6 +106,7 @@ menu > div > menu-item > div > span {
 }
 .menu-icon {
     position: absolute;
+    left: 12px;
 }
 .btn-menu {
     padding: 9px 11px 7px;
@@ -161,9 +162,9 @@ menu > div > menu-item > div > span {
     font-size: 25px;
     border: 1px solid #d53e41;
     color: #d53e41;
-    padding: 5px 11px 5px 13px;
-    border-radius: 24px;
-    width: 48px;
+    padding: 5px 0px;
+    border-radius: 10px;
+    width: 40px;
     margin-left: 21px;
 }
 .col-people {
@@ -274,12 +275,17 @@ menu > div > menu-item > div > span {
     padding-top: 11px;
     padding-bottom: 10px;
 }
+.panel-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 .panel-img {
-    position: absolute;
-    left: 40px;
-    top: 10px;
-    background: #fff;
-    z-index: 9;
+    font-size: 25px;
+    color: #d53e41;
+    text-align: right;
+    padding: 2px 0;
+    margin-top: 1px;
 }
 .list-group-item {
     padding: 8px 15px;
@@ -290,8 +296,52 @@ menu > div > menu-item > div > span {
 }
 .list-unstyled {
     line-height: 25px;
+    margin-top: -5px;
 }
-
+.load-text {
+    position: absolute;
+    top: 1px;
+    left: 24px;
+    font-size: 12px;
+    color: #d53e41;
+}
+.no-item {
+    font-size: 18px;
+}
+.description {
+    margin-top: 7px;
+    line-height: 23px;
+    font-family: arial;
+    font-size: 13px;
+}
+.list-film {
+    margin-bottom: 2px;
+}
+.list-film span {
+    font-family: arial;
+    font-size: 12px;
+    margin-left: 2px;
+}
+.list-top {
+    margin-top: 10px;
+}
+.arial {
+    font-family: arial;
+    font-size: 13px;
+}
+.loadlist {
+    margin-top: 2px;
+    border-bottom: 1px solid #d53e41;
+    border-top: 1px solid #d53e41;
+    border-radius: 100%;
+    width: 15px;
+    height: 15px;
+    -webkit-animation: spin .9s infinite linear;
+    -moz-animation: spin .9s infinite linear;
+    -ms-animation: spin .9s infinite linear;
+    -o-animation: spin .9s infinite linear;
+    animation: spin .9s infinite linear;
+}
 .loading {
     margin: 20px auto 0;
     border-bottom: 2px solid #fff;

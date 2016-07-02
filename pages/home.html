@@ -1,6 +1,9 @@
+<!-- Title Resources -->
 <div class="list-title animated fadeIn" ng-hide="loading">{{title}}</div>
+
+<!-- Content List -->
 <ul class="list-unstyled list-resources">
-    <li ng-repeat="item in items" class="animated fadeIn">
+    <li ng-repeat="item in items" class="animated fadeIn" ui-sref="details({id:id,url:item.url})">
         <div class="row">
             <div class="col-xs-2 zero-right text-center col-people">
                 <div class="list-img">
