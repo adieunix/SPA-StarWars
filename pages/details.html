@@ -1,0 +1,118 @@
+<div class="panel panel-default panel-details">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-xs-1 zero-padding text-center panel-head-back" ng-click="back()">
+                <i class="ion-android-arrow-back"></i>
+            </div>
+            <div class="col-xs-8 panel-head-title">
+                <h3 class="panel-title">{{profile.name}}</h3>
+            </div>
+            <div class="col-xs-3 zero-left">
+                <div class="list-img panel-img">
+                    <i class="{{profile.icon}}"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div ng-show="showPeople">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            HEIGHT
+                        </div>
+                        <div class="col-xs-8 zero-left grey">
+                            : {{profile.height}} kg
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            MASS
+                        </div>
+                        <div class="col-xs-8 zero-left grey">
+                            : {{profile.mass}} cm
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            HAIR COLOR
+                        </div>
+                        <div class="col-xs-8 zero-left grey">
+                            : {{profile.hair}}
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            SKIN COLOR
+                        </div>
+                        <div class="col-xs-8 zero-left grey">
+                            : {{profile.skin}}
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            EYE COLOR
+                        </div>
+                        <div class="col-xs-8 zero-left grey">
+                            : {{profile.eye}}
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            BIRTH YEAR
+                        </div>
+                        <div class="col-xs-8 zero-left grey">
+                            : {{profile.birth}}
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            GENDER
+                        </div>
+                        <div class="col-xs-8 zero-left grey">
+                            : {{profile.gender}}
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            HOMEWORLD
+                        </div>
+                        <div class="col-xs-8 zero-left grey">
+                            : <a ui-sref="details({id:6,url:link.home})">{{home}}</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            FILMS
+                        </div>
+                        <div class="col-xs-8 zero-left grey">
+                            <div ng-show="loadList" class="loadlist">Loading...</div>
+                            <ul class="list-unstyled">
+                                <li ng-repeat="itemf in itemFilms"><a ui-sref="details({id:2,url:itemf.url})">{{itemf.title}}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--<div class="loading" ng-show="loading"></div>-->

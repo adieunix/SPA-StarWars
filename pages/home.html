@@ -1,0 +1,37 @@
+<div class="list-title animated fadeIn" ng-hide="loading">{{title}}</div>
+<ul class="list-unstyled list-resources">
+    <li ng-repeat="item in items" class="animated fadeIn">
+        <div class="row">
+            <div class="col-xs-2 zero-right text-center col-people">
+                <div class="list-img">
+                    <i class="{{listIcon}}"></i>
+                </div>
+            </div>
+            <div class="col-xs-8 zero-left col-name">
+                {{item.name}}
+            </div>
+            <div class="col-xs-2 zero-left text-right col-next">
+                <i class="ion-ios-arrow-right"></i>
+            </div>
+        </div>
+    </li>
+</ul>
+
+<!-- Pagination -->
+<div class="row animated fadeIn" ng-hide="pagination">
+    <div class="col-xs-5 text-right">
+        <div ng-class="{'prev':prev!=null,'prev-null':prev==null}" ng-click="pushPrev(prev,id)">
+            <i class="ion-ios-arrow-left pagi-icon"></i>
+        </div>
+    </div>
+    <div class="col-xs-2 text-center">
+        <div class="page-num">Page {{page}}</div>
+    </div>
+    <div class="col-xs-5 text-left">
+        <div ng-class="{'next':next!=null,'next-null':next==null}" ng-click="pushNext(next,id)">
+            <i class="ion-ios-arrow-right pagi-icon"></i>
+        </div>
+    </div>
+</div>
+
+<div class="loading" ng-show="loading"></div>

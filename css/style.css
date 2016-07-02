@@ -10,6 +10,10 @@ body {
     background: #f5f5f5;
     font-family: roboto-medium;
 }
+a:hover,
+a {
+    color: #d53e41;
+}
 .content {
     margin-top: 50px;
 }
@@ -157,7 +161,7 @@ menu > div > menu-item > div > span {
     font-size: 25px;
     border: 1px solid #d53e41;
     color: #d53e41;
-    padding: 5px 11px 5px 12px;
+    padding: 5px 11px 5px 13px;
     border-radius: 24px;
     width: 48px;
     margin-left: 21px;
@@ -243,6 +247,49 @@ menu > div > menu-item > div > span {
     font-size: 20px;
     margin: 20px 0;
     line-height: 0px;
+}
+.panel-details {
+    margin-top: 20px;
+}
+.panel-heading {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.panel-head-back {
+    padding-top: 7px;
+    padding-bottom: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #d53e41;
+}
+.panel-head-back:hover {
+    background-color: #d53e41;
+    color: #fff;
+    transition: background 0.4s;
+    -webkit-transition: background 0.4s;
+    -moz-transition: background 0.4s;
+    -o-transition: background 0.4s;
+}
+.panel-head-title {
+    padding-top: 11px;
+    padding-bottom: 10px;
+}
+.panel-img {
+    position: absolute;
+    left: 40px;
+    top: 10px;
+    background: #fff;
+    z-index: 9;
+}
+.list-group-item {
+    padding: 8px 15px;
+}
+.grey {
+    color: #888;
+    text-transform: capitalize;
+}
+.list-unstyled {
+    line-height: 25px;
 }
 
 .loading {
