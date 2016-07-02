@@ -30,9 +30,10 @@ angular.module('sw.details', [])
             $scope.loading = false;
             
             /* Get Homeworld */
-            $http.get($stateParams.url)
+            $http.get(res.data.homeworld)
             .then(function(res) {
-                $scope.home = res.data.name
+                $scope.home = res.data.name;
+                $scope.hurl = res.data.url;
             });
             
             /* Get List Films */
@@ -103,6 +104,7 @@ angular.module('sw.details', [])
             $scope.icon = 'ion-android-person';
         });
     }
+    
     
     /* FILMS DETAILS */
     if($stateParams.id==2) {
@@ -196,6 +198,7 @@ angular.module('sw.details', [])
         });
     }
     
+    
     /* STARSHIPS DETAILS */
     if($stateParams.id==3) {
         $scope.showStarships = true;
@@ -253,6 +256,184 @@ angular.module('sw.details', [])
             /* View Data Panel Heading */
             $scope.title = res.data.name;
             $scope.icon = 'ion-jet';
+        });
+    }
+    
+    
+    /* VEHICLES DETAILS */
+    if($stateParams.id==4) {
+        $scope.showVehicles = true;
+        $scope.loadList = true;
+        var getVehicles = {
+            method: 'GET',
+            url: $stateParams.url
+        }
+        $http(getVehicles)
+        .then(function(res) {
+            $scope.loading = false;
+            
+            /* Get List Pilots */
+            $scope.itemPilotsV = [];
+            angular.forEach(res.data.pilots, function(v,k) {
+                $http.get(v)
+                .then(function(res) {
+                    $scope.loadList = false;
+                    $scope.itemPilotsV.push({
+                        name: res.data.name,
+                        url: res.data.url
+                    });
+                });
+            });
+            
+            /* Get List Films */
+            $scope.itemFilmsV = [];
+            angular.forEach(res.data.films, function(v,k) {
+                $http.get(v)
+                .then(function(res) {
+                    $scope.loadList = false;
+                    $scope.itemFilmsV.push({
+                        name: res.data.title,
+                        url: res.data.url
+                    });
+                });
+            });
+            
+            /* View Data Vehicles */
+            $scope.vehicle = {
+                model: res.data.model,
+                manufacturer: res.data.manufacturer,
+                cost: res.data.cost_in_credits,
+                length: res.data.length,
+                max: res.data.max_atmosphering_speed,
+                crew: res.data.crew,
+                passengers: res.data.passengers,
+                cargo: res.data.cargo_capacity,
+                consumables: res.data.consumables,
+                class: res.data.vehicle_class
+            }
+            
+            /* View Data Panel Heading */
+            $scope.title = res.data.name;
+            $scope.icon = 'ion-android-car';
+        });
+    }
+    
+    
+    /* SPECIES DETAILS */
+    if($stateParams.id==5) {
+        $scope.showSpecies = true;
+        $scope.loadList = true;
+        var getSpecies = {
+            method: 'GET',
+            url: $stateParams.url
+        }
+        $http(getSpecies)
+        .then(function(res) {
+            $scope.loading = false;
+            
+            /* Get Homeworld */
+            $http.get(res.data.homeworld)
+            .then(function(res) {
+                $scope.hhome = res.data.name;
+                $scope.urlh = res.data.url;
+            });
+            
+            /* Get List People */
+            $scope.itemPeopleS = [];
+            angular.forEach(res.data.people, function(v,k) {
+                $http.get(v)
+                .then(function(res) {
+                    $scope.loadList = false;
+                    $scope.itemPeopleS.push({
+                        name: res.data.name,
+                        url: res.data.url
+                    });
+                });
+            });
+            
+            /* Get List Films */
+            $scope.itemFilmsS = [];
+            angular.forEach(res.data.films, function(v,k) {
+                $http.get(v)
+                .then(function(res) {
+                    $scope.loadList = false;
+                    $scope.itemFilmsS.push({
+                        name: res.data.title,
+                        url: res.data.url
+                    });
+                });
+            });
+            
+            /* View Data Species */
+            $scope.species = {
+                classification: res.data.classification,
+                designation: res.data.designation,
+                avg: res.data.average_height,
+                skin: res.data.skin_colors,
+                lifespan: res.data.average_lifespan,
+                language: res.data.language
+            }
+            
+            /* View Data Panel Heading */
+            $scope.title = res.data.name;
+            $scope.icon = 'ion-ios-body';
+        });
+    }
+    
+    
+    /* PLANETS DETAILS */
+    if($stateParams.id==6) {
+        $scope.showPlanets = true;
+        $scope.loadList = true;
+        var getSpecies = {
+            method: 'GET',
+            url: $stateParams.url
+        }
+        $http(getSpecies)
+        .then(function(res) {
+            $scope.loading = false;
+            
+            /* Get List Resident */
+            $scope.itemResident = [];
+            angular.forEach(res.data.residents, function(v,k) {
+                $http.get(v)
+                .then(function(res) {
+                    $scope.loadList = false;
+                    $scope.itemResident.push({
+                        name: res.data.name,
+                        url: res.data.url
+                    });
+                });
+            });
+            
+            /* Get List Films */
+            $scope.itemFilmsP = [];
+            angular.forEach(res.data.films, function(v,k) {
+                $http.get(v)
+                .then(function(res) {
+                    $scope.loadList = false;
+                    $scope.itemFilmsP.push({
+                        name: res.data.title,
+                        url: res.data.url
+                    });
+                });
+            });
+            
+            /* View Data Planets */
+            $scope.planets = {
+                rotation: res.data.rotation_period,
+                orbit: res.data.orbital_period,                
+                diameter: res.data.diameter,                
+                climate: res.data.climate,                
+                surface: res.data.surface_water,                
+                gravity: res.data.gravity,                
+                terrain: res.data.terrain,                
+                population: res.data.population,                
+            }
+            
+            /* View Data Panel Heading */
+            $scope.title = res.data.name;
+            $scope.icon = 'ion-ios-body';
         });
     }
 });
