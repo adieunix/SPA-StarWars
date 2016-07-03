@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="127.0.0.1:8080" />
+<title>Selenium-SPA-StarWars</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Selenium-SPA-StarWars</td></tr>
+</thead><tbody>
+<!--Side Menu Resources-->
+<tr>
+	<td>click</td>
+	<td>css=i.ion-navicon-round</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td>5000</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=body.ng-scope</td>
+	<td></td>
+</tr>
+<!--Autocomplete Search-->
+<tr>
+	<td>sendKeys</td>
+	<td>//input[@type='text']</td>
+	<td>l</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//input[@type='text']</td>
+	<td>u</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//input[@type='text']</td>
+	<td>k</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//input[@type='text']</td>
+	<td>e</td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td>5000</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@type='text']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td>5000</td>
+</tr>
+<!--Go to Next Page-->
+<tr>
+	<td>click</td>
+	<td>css=div.next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//li/div/div[2]</td>
+	<td>100000</td>
+</tr>
+<!--Click List Element-->
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td>5000</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//li</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Attack of the Clones</td>
+	<td>100000</td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td>5000</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Attack of the Clones</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//li/div/div[2]</td>
+	<td>100000</td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td>5000</td>
+</tr>
+<!--Back View-->
+<tr>
+	<td>click</td>
+	<td>css=i.ion-android-arrow-back</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Tatooine</td>
+	<td>100000</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Tatooine</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td>5000</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=img.img-responsive.center-block</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
