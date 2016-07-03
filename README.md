@@ -19,4 +19,4 @@ All Star Wars data API called from [http://swapi.co] (http://swapi.co/)
 [http://swapi.idekita.id] (http://swapi.idekita.id/). Demo hosted in Digital Ocean
 
 ## UI-Testing
-(Selenium IDE) (http://www.seleniumhq.org/) for UI testing.
+[Selenium IDE] (http://www.seleniumhq.org/) for UI testing.
