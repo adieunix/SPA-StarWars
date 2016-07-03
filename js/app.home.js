@@ -103,7 +103,8 @@ angular.module('sw.home', [])
                     $scope.items = [];
                     angular.forEach(res.data.results, function(v,k) {
                         $scope.items.push({
-                            name: res.data.results[k].title
+                            name: res.data.results[k].title,
+                            url: res.data.results[k].url
                         });
                     });
                     $scope.loading = false;
@@ -138,7 +139,8 @@ angular.module('sw.home', [])
                     $scope.items = [];
                     angular.forEach(res.data.results, function(v,k) {
                         $scope.items.push({
-                            name: res.data.results[k].title
+                            name: res.data.results[k].title,
+                            url: res.data.results[k].url
                         });
                     });
                     $scope.loading = false;
@@ -221,7 +223,7 @@ angular.module('sw.home', [])
                 /* Get Vehicles First Page */
                 var getVehicle = {
                     method: 'GET',
-                    url: Service.API+'starships'
+                    url: Service.API+'vehicles'
                 }
                 $http(getVehicle)
                 .then(function(res) {

@@ -447,7 +447,7 @@ angular.module('sw.details', [])
             
             /* View Data Panel Heading */
             $scope.title = res.data.name;
-            $scope.icon = 'ion-ios-body';
+            $scope.icon = 'ion-planet';
         });
     }
 });

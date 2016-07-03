@@ -9,7 +9,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class UITesting {
+public class SeleniumSPAStarWars {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -18,12 +18,12 @@ public class UITesting {
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = "127.0.0.1:8080";
+    baseUrl = "swapi.idekita.id";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
   @Test
-  public void testUITesting() throws Exception {
+  public void testSeleniumSPAStarWars() throws Exception {
     // Side Menu Resources
     driver.findElement(By.cssSelector("i.ion-navicon-round")).click();
     driver.findElement(By.cssSelector("body.ng-scope")).click();
