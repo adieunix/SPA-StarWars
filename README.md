@@ -13,7 +13,8 @@ All Star Wars data API called from [http://swapi.co] (http://swapi.co/)
 ## Features
 1. Slide menu for access all Star Wars resources
 2. Search filter for searching your resources (Planets, Spaceships, Vehicles, People, Films and Species)
-3. Back button for back view in single state (details page)
+3. Responsive for mobile view 
+4. Back button for back view in single state (details page)
 
 ## Demo
 [http://swapi.idekita.id] (http://swapi.idekita.id/). Demo hosted in Digital Ocean
