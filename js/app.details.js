@@ -14,7 +14,21 @@ angular.module('sw.details', [])
     
     /* Back button */
     $scope.back = function() {
-        window.history.back();
+        $state.go('details',{id:localStorage.getItem('id'),url:localStorage.getItem('url')});
+        if(localStorage.getItem('id2')==null && localStorage.getItem('url2')==null) history.back();
+    }
+    
+    /* Use localStorage for back view inside a single state */
+    if(localStorage.getItem('id2')!=null && localStorage.getItem('url2')!=null) {
+        localStorage.setItem('id',localStorage.getItem('id2'));
+        localStorage.setItem('url',localStorage.getItem('url2'));
+    }    
+    if(localStorage.getItem('id')!=null && localStorage.getItem('url')!=null) {
+        localStorage.setItem('id2',$stateParams.id);
+        localStorage.setItem('url2',$stateParams.url);
+    } else {
+        localStorage.setItem('id',$stateParams.id);
+        localStorage.setItem('url',$stateParams.url);
     }
     
     /* PEOPLE DETAILS */

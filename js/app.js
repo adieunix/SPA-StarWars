@@ -25,7 +25,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
     
     .state('details', {
-        cache: false,
         url: '/details',
         templateUrl: "pages/details.html",
         controller: 'DetailsCtrl',

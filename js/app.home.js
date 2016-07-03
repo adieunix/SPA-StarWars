@@ -13,6 +13,9 @@ angular.module('sw.home', [])
     $scope.loading = true;
     $scope.pagination = true;
     
+    /* Clear all local storage */
+    localStorage.clear();
+    
     /* Button trigger for Prev/Next */
     $scope.pushPrev = function(url,id) {
         $state.go('home',{id:id,url:url});
