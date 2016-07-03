@@ -13,6 +13,9 @@ angular.module('sw.home', [])
     $scope.loading = true;
     $scope.pagination = true;
     
+    /* Search filter */
+    $scope.searchList = '';
+    
     /* Clear all local storage */
     localStorage.clear();
     

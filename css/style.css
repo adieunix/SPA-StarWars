@@ -153,7 +153,7 @@ menu > div > menu-item > div > span {
     cursor: pointer;
 }
 .list-title {
-    margin: 10px 0 -7px;
+    margin: 23px 0 -7px;
     font-size: 22px;
     color: #949494;
     font-family: roboto-light;
@@ -324,6 +324,46 @@ menu > div > menu-item > div > span {
 }
 .list-top {
     margin-top: 10px;
+}
+.top-head {
+    margin: 5px -15px 15px;
+}
+.input-top input {
+    border-right: none;
+    border-top-left-radius: 2px;
+    -moz-border-top-left-radius: 2px;
+    -webkit-border-top-left-radius: 2px;
+    -o-border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    -moz-border-bottom-left-radius: 2px;
+    -webkit-border-bottom-left-radius: 2px;
+    -o-border-bottom-left-radius: 2px;
+    border-color: #ddd;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.input-top {
+    margin-top: 20px;
+}
+.input-top input:focus {
+    border-color: #ddd;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.input-top span {
+    border-top-right-radius: 2px;
+    -moz-border-top-right-radius: 2px;
+    -webkit-border-top-right-radius: 2px;
+    -o-border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    -moz-border-bottom-right-radius: 2px;
+    -webkit-border-bottom-right-radius: 2px;
+    -o-border-bottom-right-radius: 2px;
+    border-color: #ddd;
+    border-color: #ddd;
+    padding: 0 10px;
+    font-size: 21px;
+    background: #fff;
 }
 .arial {
     font-family: arial;

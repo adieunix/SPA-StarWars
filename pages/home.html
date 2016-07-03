@@ -1,9 +1,22 @@
-<!-- Title Resources -->
-<div class="list-title animated fadeIn" ng-hide="loading">{{title}}</div>
+<!-- Title Resources & Search -->
+<div class="row top-head" ng-hide="loading">
+    <div class="col-xs-6">
+        <div class="list-title animated fadeIn">{{title}}</div>
+    </div>
+    <div class="col-xs-6 text-right">
+        <div class="input-group input-top">
+            <input type="text" class="form-control" placeholder="Search.." aria-describedby="basic-addon2" ng-model="searchList">
+            <span class="input-group-addon" id="basic-addon2">
+                <i class="ion-ios-search-strong"></i>
+            </span>
+        </div>
+    </div>
+</div>
 
+<!--<input type="text" class="form-control" placeholder="Search" ng-model="searchList">-->
 <!-- Content List -->
 <ul class="list-unstyled list-resources">
-    <li ng-repeat="item in items" class="animated fadeIn" ui-sref="details({id:id,url:item.url})">
+    <li ng-repeat="item in items | filter:searchList" class="animated fadeIn" ui-sref="details({id:id,url:item.url})">
         <div class="row">
             <div class="col-xs-2 zero-right text-center col-people">
                 <div class="list-img">
