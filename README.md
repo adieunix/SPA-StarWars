@@ -17,7 +17,7 @@ All Star Wars data API called from [http://swapi.co] (http://swapi.co/)
 4. Back button for back view in single state (details page)
 
 ## Demo
-[http://swapi.idekita.id] (http://swapi.idekita.id/). Demo hosted in Digital Ocean
+[http://swapi.idekita.id] (http://idekita.id/). Demo hosted in Digital Ocean
 
 ## UI-Testing
 [Selenium IDE] (http://www.seleniumhq.org/) for UI testing.
